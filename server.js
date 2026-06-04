@@ -13,6 +13,9 @@ if (!OWM_KEY) {
 
 // Serve the frontend
 app.use(express.static(path.join(__dirname, 'public')));
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
 
 // ── Weather proxy ──────────────────────────────────────────────
 // Browser calls  GET /api/weather?lat=12.97&lon=77.59
